@@ -180,62 +180,6 @@ class GlobalSettings extends \WC_Settings_Page {
 				'markup'  => $whStatus,
 				'id'    => 'btcpay_gf_whstatus'
 			],
-			'secondary_title_connection' => [
-				'title' => esc_html_x(
-					'Secondary BTCPay Server',
-					'global_settings',
-					'btcpay-greenfield-for-woocommerce'
-				),
-				'type' => 'title',
-				'desc' => 'Used for users without blacklisted role.',
-				'id' => 'btcpay_gf_connection_sec'
-			],
-
-			'url_sec' => [
-				'title' => esc_html_x(
-					'Secondary BTCPay Server URL',
-					'global_settings',
-					'btcpay-greenfield-for-woocommerce'
-				),
-				'type' => 'text',
-				'id' => 'btcpay_gf_url_sec'
-			],
-
-			'api_key_sec' => [
-				'title' => esc_html_x(
-					'Secondary BTCPay API Key',
-					'global_settings',
-					'btcpay-greenfield-for-woocommerce'
-				),
-				'type' => 'text',
-				'id' => 'btcpay_gf_api_key_sec'
-			],
-
-			'store_id_sec' => [
-				'title' => esc_html_x(
-					'Secondary Store ID',
-					'global_settings',
-					'btcpay-greenfield-for-woocommerce'
-				),
-				'type' => 'text',
-				'id' => 'btcpay_gf_store_id_sec'
-			],
-
-			'whsecret_sec' => [
-				'title' => esc_html_x(
-					'Secondary Webhook Secret',
-					'global_settings',
-					'btcpay-greenfield-for-woocommerce'
-				),
-				'type' => 'text',
-				'id' => 'btcpay_gf_whsecret_sec'
-			],
-
-			'sectionend_connection_sec' => [
-				'type' => 'sectionend',
-				'id' => 'btcpay_gf_connection_sec',
-			],
-
 			'sectionend_connection' => [
 				'type' => 'sectionend',
 				'id' => 'btcpay_gf_connection',
@@ -327,7 +271,19 @@ class GlobalSettings extends \WC_Settings_Page {
 				'id' => 'btcpay_gf_debug'
 			],
 			'sectionend' => [
-				'type' => 'sectionend',
+				
+			[
+				'title' => __('Setup Secondary Webhook', 'btcpay-greenfield-for-woocommerce'),
+				'type' => 'button',
+				'id' => 'btcpay_setup_secondary_webhook',
+				'css' => 'min-width:300px;',
+				'custom_attributes' => [
+					'onClick' => 'document.getElementById("mainform").submit();'
+				],
+				'desc' => __('Creates webhook for secondary BTCPay server', 'btcpay-greenfield-for-woocommerce')
+			],
+
+'type' => 'sectionend',
 				'id' => 'btcpay_gf',
 			],
 		];
